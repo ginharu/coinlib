@@ -4,10 +4,10 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/maiiz/coinlib/encoding/varint"
+	"github.com/cyrildou/coinlib/encoding/varint"
 
-	"github.com/maiiz/coinlib/crypto"
-	"github.com/maiiz/coinlib/script"
+	"github.com/cyrildou/coinlib/crypto"
+	"github.com/cyrildou/coinlib/script"
 )
 
 const (

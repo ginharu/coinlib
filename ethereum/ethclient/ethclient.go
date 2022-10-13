@@ -22,14 +22,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"math/big"
-
+	"github.com/cyrildou/coinlib/ethereum/types"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/maiiz/coinlib/ethereum/types"
+	"math/big"
 )
 
 // Client defines typed wrappers for the Ethereum RPC API.
@@ -193,7 +192,7 @@ func (ec *Client) TransactionByHash(ctx context.Context, hash common.Hash) (tx *
 		return nil, false, err
 	} else if json == nil {
 		return nil, false, ethereum.NotFound
-	}/* else if _, r, _ := json.tx.RawSignatureValues(); r == nil {
+	} /* else if _, r, _ := json.tx.RawSignatureValues(); r == nil {
 		return nil, false, fmt.Errorf("server returned transaction without signature")
 	}*/
 	setSenderFromServer(json.tx, json.From, json.BlockHash)
@@ -208,7 +207,7 @@ func (ec *Client) TransactionByHashNotify(ctx context.Context, hash common.Hash)
 		return nil, false, err
 	} else if json == nil {
 		return nil, false, ethereum.NotFound
-	}/* else if _, r, _ := json.tx.RawSignatureValues(); r == nil {
+	} /* else if _, r, _ := json.tx.RawSignatureValues(); r == nil {
 		return nil, false, fmt.Errorf("server returned transaction without signature")
 	}*/
 	//setSenderFromServer1(json.tx, json.From, json.BlockHash)

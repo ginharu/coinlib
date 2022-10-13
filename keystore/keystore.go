@@ -7,14 +7,12 @@ import (
 	"log"
 	"os"
 
-	"github.com/maiiz/coinlib/crypto"
-	"github.com/maiiz/coinlib/crypto/secp256k1"
-	"github.com/maiiz/coinlib/params"
-	"github.com/maiiz/coinlib/utils"
-
+	"github.com/cyrildou/coinlib/crypto"
+	"github.com/cyrildou/coinlib/crypto/secp256k1"
+	"github.com/cyrildou/coinlib/params"
+	"github.com/cyrildou/coinlib/utils"
 	//"fmt"
-	//"github.com/maiiz/eth-2-0/base"
-
+	//"github.com/cyrildou/eth-2-0/base"
 )
 
 const (
@@ -180,7 +178,7 @@ func (ks *KeyStore) GenerateKeys(num uint32, auth string) error {
 
 		// write length
 		buf := make([]byte, 4)
-		binary.LittleEndian.PutUint32(buf, num + changeAddressNum)
+		binary.LittleEndian.PutUint32(buf, num+changeAddressNum)
 		ks.write(buf)
 
 		// Write Address->Key

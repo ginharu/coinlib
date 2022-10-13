@@ -20,8 +20,8 @@ import (
 	"errors"
 	"math/big"
 
+	"github.com/cyrildou/coinlib/ethereum/types"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/maiiz/coinlib/ethereum/types"
 )
 
 // senderFromServer is a types.Signer that remembers the sender address returned by the RPC

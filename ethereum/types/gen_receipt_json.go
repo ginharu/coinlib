@@ -7,7 +7,7 @@ import (
 	"errors"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/maiiz/coinlib/params"
+	"github.com/cyrildou/coinlib/params"
 	"math/big"
 )
 

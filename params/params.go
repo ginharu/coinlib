@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/maiiz/coinlib/crypto"
-	"github.com/maiiz/coinlib/encoding/base58"
+	"github.com/cyrildou/coinlib/crypto"
+	"github.com/cyrildou/coinlib/encoding/base58"
 )
 
 // ChainParams defines the chain parameters.

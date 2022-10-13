@@ -6,7 +6,7 @@ import (
 	"crypto/cipher"
 	"errors"
 
-	"github.com/maiiz/coinlib/utils"
+	"github.com/cyrildou/coinlib/utils"
 	"golang.org/x/crypto/scrypt"
 )
 
