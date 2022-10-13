@@ -28,7 +28,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
 )
 
@@ -122,10 +122,20 @@ func (h *Header) HashNoNonce() common.Hash {
 }
 
 func rlpHash(x interface{}) (h common.Hash) {
-	hw := sha3.NewKeccak256()
+	//hw2 := crypto.Keccak256Hash()
+
+	//modify by cyrildou 20221013
+	hw := crypto.NewKeccakState()
 	rlp.Encode(hw, x)
 	hw.Sum(h[:0])
 	return h
+	/*
+		hw := crypto.NewKeccak256()
+		rlp.Encode(hw, x)
+		hw.Sum(h[:0])
+		return h
+
+	*/
 }
 
 // Body is a simple (mutable, non-safe) data container for storing and moving

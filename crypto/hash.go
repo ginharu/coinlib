@@ -4,7 +4,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 
-	"github.com/ethereum/go-ethereum/crypto/sha3"
+	"github.com/ethereum/go-ethereum/crypto"
 	"golang.org/x/crypto/ripemd160"
 )
 
@@ -97,31 +97,53 @@ func Ripemd160(data []byte) []byte {
 
 // Keccak256 calculates and returns the Keccak256 hash of the input data.
 func Keccak256(data ...[]byte) []byte {
-	d := sha3.NewKeccak256()
-	for _, b := range data {
-		d.Write(b)
-	}
-	return d.Sum(nil)
+
+	//modify by cyrildou 20221013
+	return crypto.Keccak256(data...)
+	/*
+		d := sha3.NewKeccak256()
+		for _, b := range data {
+			d.Write(b)
+		}
+		return d.Sum(nil)
+	*/
 }
 
 // Keccak256Hash calculates and returns the Keccak256 hash of the input data,
 // converting it to an internal Hash data structure.
 func Keccak256Hash(data ...[]byte) (h Hash) {
-	d := sha3.NewKeccak256()
+
+	//modify by cyrildou 20221013
+	d := crypto.NewKeccakState()
 	for _, b := range data {
 		d.Write(b)
 	}
-	d.Sum(h[:0])
+	d.Read(h[:])
 	return h
+	/*
+		d := sha3.NewKeccak256()
+		for _, b := range data {
+			d.Write(b)
+		}
+		d.Sum(h[:0])
+		return h
+
+	*/
 }
 
 // Keccak512 calculates and returns the Keccak512 hash of the input data.
 func Keccak512(data ...[]byte) []byte {
-	d := sha3.NewKeccak512()
-	for _, b := range data {
-		d.Write(b)
-	}
-	return d.Sum(nil)
+
+	//modify by cyrildou 20221013
+	return crypto.Keccak512(data...)
+	/*
+		d := sha3.NewKeccak512()
+		for _, b := range data {
+			d.Write(b)
+		}
+		return d.Sum(nil)
+
+	*/
 }
 
 // // CreateAddress creates an ethereum address given the bytes and the nonce.
