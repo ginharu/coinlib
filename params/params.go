@@ -50,6 +50,7 @@ const (
 	ZXT       = "zxt"
 	QKI       = "qki"
 	PRIETHWTX = "priethwtx"
+	MATIC     = "matic"
 )
 
 var (
@@ -287,6 +288,21 @@ var (
 		TxGas:   big.NewInt(21000),
 		ChainID: big.NewInt(198408),
 	}
+
+	maticMainnetParams = &ChainParams{
+		DefaultPort: 30303,
+		RPCPort:     8545,
+
+		CoinbaseMaturity: 0,
+		Coin:             big.NewInt(1e18),
+		CoinType:         MATIC,
+
+		AddressHashFunc: func(b []byte) []byte { return crypto.Keccak256(b[1:])[12:] },
+		ToAddress:       func(b []byte) string { return fmt.Sprintf("0x%x", b) },
+
+		TxGas:   big.NewInt(21000),
+		ChainID: big.NewInt(137),
+	}
 )
 
 // SelectChain selects the chain parameters to use
@@ -317,6 +333,9 @@ func SelectChain(ct string) *ChainParams {
 		Params = eth1MainnetParams
 	case PRIETHWTX:
 		Params = priethwtxMainnetParams
+	case MATIC:
+		Params = maticMainnetParams
 	}
+
 	return Params
 }
