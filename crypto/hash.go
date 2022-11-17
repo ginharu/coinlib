@@ -98,7 +98,7 @@ func Ripemd160(data []byte) []byte {
 // Keccak256 calculates and returns the Keccak256 hash of the input data.
 func Keccak256(data ...[]byte) []byte {
 
-	//modify by cyrildou 20221013
+	//modify by ginharu 20221013
 	return crypto.Keccak256(data...)
 	/*
 		d := sha3.NewKeccak256()
@@ -113,7 +113,7 @@ func Keccak256(data ...[]byte) []byte {
 // converting it to an internal Hash data structure.
 func Keccak256Hash(data ...[]byte) (h Hash) {
 
-	//modify by cyrildou 20221013
+	//modify by ginharu 20221013
 	d := crypto.NewKeccakState()
 	for _, b := range data {
 		d.Write(b)
@@ -134,7 +134,7 @@ func Keccak256Hash(data ...[]byte) (h Hash) {
 // Keccak512 calculates and returns the Keccak512 hash of the input data.
 func Keccak512(data ...[]byte) []byte {
 
-	//modify by cyrildou 20221013
+	//modify by ginharu 20221013
 	return crypto.Keccak512(data...)
 	/*
 		d := sha3.NewKeccak512()

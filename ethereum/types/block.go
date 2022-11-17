@@ -124,7 +124,7 @@ func (h *Header) HashNoNonce() common.Hash {
 func rlpHash(x interface{}) (h common.Hash) {
 	//hw2 := crypto.Keccak256Hash()
 
-	//modify by cyrildou 20221013
+	//modify by ginharu 20221013
 	hw := crypto.NewKeccakState()
 	rlp.Encode(hw, x)
 	hw.Sum(h[:0])

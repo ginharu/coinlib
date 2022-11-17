@@ -6,10 +6,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/cyrildou/coinlib/keystore"
-	"github.com/cyrildou/coinlib/utils"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ginharu/coinlib/keystore"
+	"github.com/ginharu/coinlib/utils"
 )
 
 // ESignTxWithPassphrase signs eth transaction.

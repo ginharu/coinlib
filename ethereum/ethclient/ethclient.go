@@ -22,12 +22,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/cyrildou/coinlib/ethereum/types"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/ginharu/coinlib/ethereum/types"
 	"math/big"
 )
 
@@ -494,7 +494,7 @@ func (ec *Client) SendTransaction(ctx context.Context, tx *types.Transaction) er
 	if err != nil {
 		return err
 	}
-	//modify by cyrildou 20221013
+	//modify by ginharu 20221013
 	return ec.c.CallContext(ctx, nil, "eth_sendRawTransaction", common.Bytes2Hex(data))
 }
 
@@ -510,7 +510,7 @@ func toCallArg(msg ethereum.CallMsg) interface{} {
 		arg["value"] = (*hexutil.Big)(msg.Value)
 	}
 	if msg.Gas != 0 {
-		//modify by cyrildou 20221013
+		//modify by ginharu 20221013
 		arg["gas"] = new(big.Int).SetUint64(msg.Gas)
 		//arg["gas"] = (*hexutil.Big)(msg.Gas)
 	}

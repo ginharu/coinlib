@@ -13,8 +13,8 @@ import (
 	"math/big"
 	"os"
 
-	"github.com/cyrildou/coinlib/crypto"
-	"github.com/cyrildou/coinlib/utils"
+	"github.com/ginharu/coinlib/crypto"
+	"github.com/ginharu/coinlib/utils"
 
 	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/crypto/secp256k1"

@@ -7,12 +7,12 @@ import (
 	"log"
 	"os"
 
-	"github.com/cyrildou/coinlib/crypto"
-	"github.com/cyrildou/coinlib/crypto/secp256k1"
-	"github.com/cyrildou/coinlib/params"
-	"github.com/cyrildou/coinlib/utils"
+	"github.com/ginharu/coinlib/crypto"
+	"github.com/ginharu/coinlib/crypto/secp256k1"
+	"github.com/ginharu/coinlib/params"
+	"github.com/ginharu/coinlib/utils"
 	//"fmt"
-	//"github.com/cyrildou/eth-2-0/base"
+	//"github.com/ginharu/eth-2-0/base"
 )
 
 const (

@@ -7,7 +7,7 @@ import (
 	"errors"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/cyrildou/coinlib/params"
+	"github.com/ginharu/coinlib/params"
 	"math/big"
 )
 
@@ -60,7 +60,7 @@ func (r *Receipt) UnmarshalJSON(input []byte) error {
 	}
 	r.CumulativeGasUsed = (*big.Int)(dec.CumulativeGasUsed)
 
-	if params.Params.CoinType != "etc"{
+	if params.Params.CoinType != "etc" {
 		if dec.Bloom == nil {
 			return errors.New("missing required field 'logsBloom' for Receipt")
 		}
