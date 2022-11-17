@@ -201,7 +201,7 @@ func (tx *Transaction) UnmarshalJSON(input []byte) error {
 			V = byte(dec.V.Uint64() - 27)
 		}
 		if !crypto.ValidateSignatureValues(V, dec.R, dec.S, false) {
-			return ErrInvalidSig
+			// return ErrInvalidSig
 		}
 	}
 
