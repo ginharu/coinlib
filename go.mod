@@ -1,4 +1,4 @@
-module github.com/cyrildou/coinlib
+module github.com/ginharu/coinlib
 
 go 1.17
 
