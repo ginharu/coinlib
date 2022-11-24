@@ -495,7 +495,16 @@ func (ec *Client) SendTransaction(ctx context.Context, tx *types.Transaction) er
 		return err
 	}
 	//modify by ginharu 20221013
-	return ec.c.CallContext(ctx, nil, "eth_sendRawTransaction", common.Bytes2Hex(data))
+	return ec.c.CallContext(ctx, nil, "eth_sendRawTransaction", ToHex(data))
+}
+
+func ToHex(b []byte) string {
+	hex := common.Bytes2Hex(b)
+	// Prefer output of "0x0" instead of "0x"
+	if len(hex) == 0 {
+		hex = "0"
+	}
+	return "0x" + hex
 }
 
 func toCallArg(msg ethereum.CallMsg) interface{} {
